@@ -32,3 +32,6 @@ Most sample code are available in the examples folder
 - ADS1015 (GY-ADS1115/ADS1015)
 - MIC-1000 Microphone
 - RS485
+
+[![Pinout Diagram](http://flat.wednus.com/_/rsrc/1549090245745/built-for-flat/hana/HackIoT%20Hana%20-%20Pinout%20Diagram.png)](http://flat.wednus.com/built-for-flat/hana)
+
