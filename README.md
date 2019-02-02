@@ -17,28 +17,28 @@ Specifications
 --------------
 - Onboard Features
   - Industrial-class Input range
- - DC 9~24V (30V tolerant)
- - High efficiency power circuit
- - DC 5V (1.5A Peak), 3.3V
- - RS485 w/ surge and ESD protection (TVS diode array)
- - Protection resistor (1k ohm) between all GPIO-to-GPIO connections
- - XBee Connection port
- - ENC28J60 Ethernet module port
- - Micro Controller
- - AVR (ATmega328P)
- - Arduino Bootloader (stock)
- - ADC: 6-channel
- - ICSP for direct Atmel Studio programming
- - Power
- - 3.3V is Isolated from RPi's 3.3V rail
- - 4-pin Screw terminal block: can be attached to its side or tail.
+    - DC 9~24V (30V tolerant)
+  - High efficiency power circuit
+    - DC 5V (1.5A Peak), 3.3V
+  - RS485 w/ surge and ESD protection (TVS diode array)
+  - Protection resistor (1k ohm) between all GPIO-to-GPIO connections
+  - XBee Connection port
+  - ENC28J60 Ethernet module port
+  - Micro Controller
+    - AVR (ATmega328P)
+    - Arduino Bootloader (stock)
+    - ADC: 6-channel
+  - ICSP for direct Atmel Studio programming
+  - Power
+    - 3.3V is Isolated from RPi's 3.3V rail
+    - 4-pin Screw terminal block: can be attached to its side or tail.
 
 - [OPTION] Features (PCB populated)
- - EEPROM: CAT34C32 pHAT ID
- - RTC: DS3231 Temperature compensated high precision realtime clock
+  - EEPROM: CAT34C32 pHAT ID
+  - RTC: DS3231 Temperature compensated high precision realtime clock
 
 - [OPTION] Accessory Adapters
- - ESP programming and others.
+  - ESP programming and others.
 
 Tested Modules
 ----------------
