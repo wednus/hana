@@ -1,8 +1,6 @@
-Examples for HackIoT Hana
-=========================
-This repository contains the latest examples and required libraries for HackIoT Hana's SDK.
-
-[more info](http://flat.wednus.com/built-for-flat)
+Examples for HackIoT Hana SDK
+=============================
+This repository contains the latest example code and sub-projects for HackIoT Hana's SDK. [(more info)](http://flat.wednus.com/built-for-flat)
 
 [![Hello World](https://img.youtube.com/vi/hEUzvTp2jGs/0.jpg)](https://www.youtube.com/watch?v=hEUzvTp2jGs)
 
