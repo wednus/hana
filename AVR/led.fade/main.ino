@@ -1,3 +1,7 @@
+// AnyPWM by Nick Borko  
+// This work is licensed under a Creative Commons  
+// Attribution-ShareAlike 3.0 Unported License  
+// http://nicks-liquid-soapbox.blogspot.com/2011/02/pwm-on-any-digital-pin-on-arduino.html
 #include <FlexiTimer2.h>
 
 // LED to pulse (non-PWM pin)

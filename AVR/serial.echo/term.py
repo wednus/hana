@@ -2,10 +2,9 @@
 #
 # Simple Terminal for HackIoT Hana
 # - SBC <-> EXP_COMM via AVR (pass-through) Serial communication
+# - Sundew Shin - sundew@wednus.com
 # - 1/21/2019
 # - http://flat.wednus.com/forum
-# Sundew Shin - sundew@wednus.com
-
 import os
 import sys
 import time
