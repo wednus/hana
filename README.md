@@ -36,10 +36,10 @@ Onboard Features:
 - Power
   - 3.3V is Isolated from RPi's 3.3V rail
   - 4-pin Screw terminal block: can be attached to its side or tail.
-  - 
+
 [OPTION] Features (PCB populated):
 - EEPROM: CAT34C32 pHAT ID
 - RTC: DS3231 Temperature compensated high precision realtime clock
-- 
+
 [OPTION] Accessory Adapters:
 - ESP programming and others.
