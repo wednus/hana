@@ -19,7 +19,7 @@ Pinout
 
 Specifications
 --------------
-Onboard Features
+Onboard Features:
 - Industrial-class Input range
   - DC 9~24V (30V tolerant)
 - High efficiency power circuit
@@ -36,8 +36,10 @@ Onboard Features
 - Power
   - 3.3V is Isolated from RPi's 3.3V rail
   - 4-pin Screw terminal block: can be attached to its side or tail.
-[OPTION] Features (PCB populated)
+  - 
+[OPTION] Features (PCB populated):
 - EEPROM: CAT34C32 pHAT ID
 - RTC: DS3231 Temperature compensated high precision realtime clock
-[OPTION] Accessory Adapters
+- 
+[OPTION] Accessory Adapters:
 - ESP programming and others.
