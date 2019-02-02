@@ -16,7 +16,7 @@ Resources
 Specifications
 --------------
 - Onboard Features
- - Industrial-class Input range
+  - Industrial-class Input range
  - DC 9~24V (30V tolerant)
  - High efficiency power circuit
  - DC 5V (1.5A Peak), 3.3V
