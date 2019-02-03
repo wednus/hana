@@ -13,13 +13,11 @@ Resources
 
 Tutorials
 ---------
-- HackIoT 01: Getting SDK for Hana
+HackIoT 01: Getting SDK for Hana
 [![HackIoT 02: Hello World](https://img.youtube.com/vi/gMTeAAD0RU8/0.jpg)](https://www.youtube.com/watch?v=gMTeAAD0RU8)
-
-- HackIoT 02: Hello World
+HackIoT 02: Hello World
 [![HackIoT 02: Hello World](https://img.youtube.com/vi/hEUzvTp2jGs/0.jpg)](https://www.youtube.com/watch?v=hEUzvTp2jGs)
-
-- HackIoT 03: Plug-n-Play Modules
+HackIoT 03: Plug-n-Play Modules
 [![HackIoT 03: Plug-n-Play Modules](https://img.youtube.com/vi/1iYv-1NqkoQ/0.jpg)](https://www.youtube.com/watch?v=1iYv-1NqkoQ)
 
 
