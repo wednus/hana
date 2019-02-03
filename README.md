@@ -1,8 +1,6 @@
 Examples for HackIoT Hana SDK
 =============================
 This repository contains the latest example code and sub-projects for HackIoT Hana's SDK.
-[![Hello World](https://img.youtube.com/vi/hEUzvTp2jGs/0.jpg)](https://www.youtube.com/watch?v=hEUzvTp2jGs)
-
 
 Resources
 ---------
@@ -10,11 +8,17 @@ Resources
 - [Youtube Tutorials](https://www.youtube.com/playlist?list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 - [Example Code Repository (github)](https://github.com/wednus/hana)
 - [Wednus User Forum](https://groups.google.com/d/forum/goflat)
+- [PIPC Community (Naver | Korean)](http://cafe.naver.com/pipc)
 
 
-Pinout
-------
-[![Pinout Diagram](http://flat.wednus.com/_/rsrc/1549090245745/built-for-flat/hana/HackIoT%20Hana%20-%20Pinout%20Diagram.png)](http://flat.wednus.com/built-for-flat/hana)
+Tutorials
+---------
+- HackIoT 01: Getting SDK for Hana
+[![HackIoT 02: Hello World](https://img.youtube.com/vi/gMTeAAD0RU8/0.jpg)](https://www.youtube.com/watch?v=gMTeAAD0RU8)
+- HackIoT 02: Hello World
+[![HackIoT 02: Hello World](https://img.youtube.com/vi/hEUzvTp2jGs/0.jpg)](https://www.youtube.com/watch?v=hEUzvTp2jGs)
+- HackIoT 03: Plug-n-Play Modules
+[![HackIoT 03: Plug-n-Play Modules](https://img.youtube.com/vi/1iYv-1NqkoQ/0.jpg)](https://www.youtube.com/watch?v=1iYv-1NqkoQ)
 
 
 Specifications
@@ -43,3 +47,8 @@ Onboard Features:
 
 [OPTION] Accessory Adapters:
 - ESP programming and others.
+
+
+Pinout
+------
+[![Pinout Diagram](http://flat.wednus.com/_/rsrc/1549090245745/built-for-flat/hana/HackIoT%20Hana%20-%20Pinout%20Diagram.png)](http://flat.wednus.com/built-for-flat/hana)
