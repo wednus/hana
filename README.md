@@ -1,6 +1,10 @@
 Examples for HackIoT Hana SDK
 =============================
-This repository contains the latest example code and sub-projects for HackIoT Hana's SDK.
+This repository contains the latest example code and projects for HackIoT Hana's SDK.
+
+Background
+----------
+Hana works as an IoT node in stand-alone mode forwarding data to remote partner device, and by connecting to Raspberry Pi like SBCs, it becomes IoT gateway device aggregating data from nodes and processing them for various applications.
 
 Resources
 ---------
