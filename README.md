@@ -34,7 +34,7 @@ Specifications
 --------------
 Onboard Features:
 - Industrial-class Input range
-  - DC 9~24V (30V tolerant)
+  - DC 12~24V (30V tolerant)
 - High efficiency power circuit
   - DC 5V (1.5A Peak), 3.3V
 - RS485 w/ surge and ESD protection (TVS diode array)
