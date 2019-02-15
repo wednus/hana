@@ -35,9 +35,7 @@ How-to
 
 2. Install Hana SDK: [Getting SDK](https://youtu.be/gMTeAAD0RU8?t=66)
 
-3. Check the rest of tutorials at HackIoT channel and subscibe for future updates.
-
-[HackIoT Youtube channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
+3. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 
 
 Links
