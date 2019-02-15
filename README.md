@@ -10,9 +10,12 @@ How-to
 ------
 Assuming you are on Raspbian:
 
-- Update /boot/cmdline.txt. Remove 'console=serial0,115200'
-- Update '/boot/config.txt' by adding the bottom the below at :
+1. Update /boot/cmdline.txt.
+Remove 'console=serial0,115200'
 
+2. Update /boot/config.txt. *sudo nano /boot/config.txt*
+
+Copy-paste below at the very bottom (for overriding existing):
 >dtparam=spi=on<br>
 dtoverlay=enc28j60<br>
 dtparam=i2c_vc=on<br>
@@ -21,7 +24,7 @@ dtoverlay=i2c-rtc,ds3231<br>
 enable_uart=1<br>
 dtoverlay=pi3-miniuart-bt
 
-- Reboot *sudo shutdown -h now*
+3. Reboot *sudo shutdown -h now*
 
 Links
 ---------
