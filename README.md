@@ -1,61 +1,40 @@
 Examples for HackIoT Hana SDK
 =============================
-This repository contains the latest example code and projects for HackIoT Hana's SDK.
+This repository contains the latest examples for HackIoT Hana.
 
 Background
 ----------
 Hana works as an IoT node in stand-alone mode forwarding data to remote partner device, and by connecting to Raspberry Pi like SBCs, it becomes IoT gateway device aggregating data from nodes and processing them for various applications.
 
-Resources
+How-to
+------
+Assuming you are on Raspbian.
+
+1. Update /boot/cmdline.txt
+    Remove 'console=serial0,115200'
+
+2. Update '/boot/config.txt' by adding the bottom the below at :
+
+    dtparam=spi=on
+    dtoverlay=enc28j60
+    dtparam=i2c_vc=on
+    dtparam=i2c_arm=on
+    dtoverlay=i2c-rtc,ds3231
+    enable_uart=1
+    dtoverlay=pi3-miniuart-bt
+
+3. Reboot
+	*sudo shutdown -h now*
+
+Links
 ---------
-- [HackIoT Hana](http://flat.wednus.com/built-for-flat) | [flat, docker for SBCs](http://flat.wednus.com) 
+- [HackIoT Hana](http://flat.wednus.com/built-for-flat) | [flat, docker for SBCs](http://flat.wednus.com)
+- [Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
 - [Youtube Tutorials](https://www.youtube.com/playlist?list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 - [Example Code Repository (github)](https://github.com/wednus/hana)
 - [Wednus User Forum](https://groups.google.com/d/forum/goflat)
 - [PIPC Community (Naver | Korean)](http://cafe.naver.com/pipc)
 
-
-Tutorials
----------
-HackIoT 01: Getting SDK for Hana
-
-[![HackIoT 02: Hello World](https://img.youtube.com/vi/gMTeAAD0RU8/0.jpg)](https://www.youtube.com/watch?v=gMTeAAD0RU8)
-
-HackIoT 02: Hello World
-
-[![HackIoT 02: Hello World](https://img.youtube.com/vi/hEUzvTp2jGs/0.jpg)](https://www.youtube.com/watch?v=hEUzvTp2jGs)
-
-HackIoT 03: Plug-n-Play Modules
-
-[![HackIoT 03: Plug-n-Play Modules](https://img.youtube.com/vi/1iYv-1NqkoQ/0.jpg)](https://www.youtube.com/watch?v=1iYv-1NqkoQ)
-
-
-Specifications
---------------
-Onboard Features:
-- Industrial-class Input range
-  - DC 12~24V (30V tolerant)
-- High efficiency power circuit
-  - DC 5V (1.5A Peak), 3.3V
-- RS485 w/ surge and ESD protection (TVS diode array)
-- Protection resistor (1k ohm) between all GPIO-to-GPIO connections
-- XBee Connection port
-- ENC28J60 Ethernet module port
-- Micro Controller
-  - AVR (ATmega328P)
-  - Arduino Bootloader (stock)
-  - ADC: 6-channel
-  - ICSP for direct Atmel Studio programming
-- Power
-  - 3.3V is Isolated from RPi's 3.3V rail
-  - 4-pin Screw terminal block: can be attached to its side or tail.
-
-[OPTION] Features (PCB populated):
-- EEPROM: CAT34C32 pHAT ID
-- RTC: DS3231 Temperature compensated high precision realtime clock
-
-[OPTION] Accessory Adapters:
-- ESP programming and others.
 
 
 Pinout
