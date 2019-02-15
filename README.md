@@ -8,23 +8,20 @@ Hana works as an IoT node in stand-alone mode forwarding data to remote partner 
 
 How-to
 ------
-Assuming you are on Raspbian.
+Assuming you are on Raspbian:
 
-1. Update /boot/cmdline.txt
-    Remove 'console=serial0,115200'
+- Update /boot/cmdline.txt. Remove 'console=serial0,115200'
+- Update '/boot/config.txt' by adding the bottom the below at :
 
-2. Update '/boot/config.txt' by adding the bottom the below at :
+>dtparam=spi=on<br>
+dtoverlay=enc28j60<br>
+dtparam=i2c_vc=on<br>
+dtparam=i2c_arm=on<br>
+dtoverlay=i2c-rtc,ds3231<br>
+enable_uart=1<br>
+dtoverlay=pi3-miniuart-bt
 
-    dtparam=spi=on
-    dtoverlay=enc28j60
-    dtparam=i2c_vc=on
-    dtparam=i2c_arm=on
-    dtoverlay=i2c-rtc,ds3231
-    enable_uart=1
-    dtoverlay=pi3-miniuart-bt
-
-3. Reboot
-	*sudo shutdown -h now*
+- Reboot *sudo shutdown -h now*
 
 Links
 ---------
