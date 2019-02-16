@@ -6,6 +6,7 @@ Background
 ----------
 Hana works as an IoT node in stand-alone mode forwarding data to remote partner device, and by connecting to Raspberry Pi like SBCs, it becomes IoT gateway device aggregating data from nodes and processing them for various applications.
 
+
 Prerequisite
 ------
 Assuming you are on Raspbian:
@@ -27,8 +28,6 @@ dtoverlay=pi3-miniuart-bt
 3. Reboot *sudo shutdown -h now*
 
 
-
-
 How-to
 ------
 1. Install flat following the instruction at: [Getting flat](http://flat.wednus.com/getting_flat)
@@ -38,14 +37,17 @@ How-to
 3. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 
 
+Getting Help
+------------
+- [flat User Group](https://groups.google.com/d/forum/goflat)
+- [PIPC SBC Community (Naver | Korean)](http://cafe.naver.com/pipc)
+
+
 Links
 ---------
 - [HackIoT Hana](http://flat.wednus.com/built-for-flat) | [flat, docker for SBCs](http://flat.wednus.com)
 - [Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
 - [Example Code Repository (github)](https://github.com/wednus/hana)
-- [Wednus User Forum](https://groups.google.com/d/forum/goflat)
-- [PIPC Community (Naver | Korean)](http://cafe.naver.com/pipc)
-
 
 
 Pinout
