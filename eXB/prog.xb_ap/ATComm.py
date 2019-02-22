@@ -33,6 +33,8 @@ if not args['commands']:
     print('Nothing to do. For help, use \'ATComm.py -h\''+ '\r\n')
     exit()
 
+# add ATWR to save change(s) made
+args['commands'].append(['WR',''])
 # first-in first-out
 args['commands'].reverse()
 

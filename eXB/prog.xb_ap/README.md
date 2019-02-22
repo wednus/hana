@@ -30,7 +30,7 @@ Batch execute AT commands
       -p PORT, --port PORT  serial device port (default:/dev/serial0)
       -b BAUD, --baud BAUD  baudrate (default:9600)
 
-##### Example (Read)
+##### Read
 ATComm.py -c NI: DH: DL:
 
     ATNI
@@ -42,7 +42,7 @@ ATComm.py -c NI: DH: DL:
     ATDL
     40F7478B
 
-##### Example (Write)
+##### Write
 ATComm.py -c NI:hana DH:13A200 DL:40FFFFF0
 
     ATNI hana
@@ -53,7 +53,7 @@ ATComm.py -c NI:hana DH:13A200 DL:40FFFFF0
 
     ATDL 40FFFFF0
     OK
-##### Example (Mixed)
+##### Mixed
 ATComm.py -c NI: DH: DL:40F7478B
 
     ATNI
@@ -64,3 +64,9 @@ ATComm.py -c NI: DH: DL:40F7478B
 
     ATDL 40F7478B
     OK
+
+Troubleshooting
+=
+### 'module' object has no attribute 'Serial'
+    pip uninstall serial
+    pip install pyserial
