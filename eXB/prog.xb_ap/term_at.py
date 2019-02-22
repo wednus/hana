@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#
+# Simple Terminal for HackIoT Hana - AT Command Shell version
+# - SBC <-> EXP_COMM via AVR (pass-through) Serial communication
+# - Sundew Shin - sundew@wednus.com
+# - 2/21/2019
+# - http://flat.wednus.com/forum
 
 import os
 import sys
