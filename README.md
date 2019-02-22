@@ -1,6 +1,8 @@
 Examples for HackIoT Hana SDK
 =============================
 This repository contains the latest examples for HackIoT Hana.
+- [Buy HackIoT Hana at Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
+
 
 Background
 ----------
@@ -17,15 +19,16 @@ Remove 'console=serial0,115200'
 2. Update /boot/config.txt. *sudo nano /boot/config.txt*
 
 Copy-paste below at the very bottom (for overriding existing):
->dtparam=spi=on<br>
-dtoverlay=enc28j60<br>
-dtparam=i2c_vc=on<br>
-dtparam=i2c_arm=on<br>
-dtoverlay=i2c-rtc,ds3231<br>
-enable_uart=1<br>
-dtoverlay=pi3-miniuart-bt
 
-3. Reboot *sudo shutdown -h now*
+    dtparam=spi=on<
+    dtoverlay=enc28j60
+    dtparam=i2c_vc=on
+    dtparam=i2c_arm=on
+    dtoverlay=i2c-rtc,ds3231
+    enable_uart=1
+    dtoverlay=pi3-miniuart-bt
+
+3. Reboot *sudo reboot*
 
 
 How-to
@@ -45,9 +48,8 @@ Getting Help
 
 Links
 ---------
-- [HackIoT Hana](http://flat.wednus.com/built-for-flat) | [flat, docker for SBCs](http://flat.wednus.com)
-- [Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
-- [Example Code Repository (github)](https://github.com/wednus/hana)
+- [HackIoT Hana Page](http://flat.wednus.com/built-for-flat)
+- [Example Code Github](https://github.com/wednus/hana)
 
 
 Pinout
