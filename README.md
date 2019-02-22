@@ -20,7 +20,7 @@ Remove 'console=serial0,115200'
 
 Copy-paste below at the very bottom (for overriding existing):
 
-    dtparam=spi=on<
+    dtparam=spi=on
     dtoverlay=enc28j60
     dtparam=i2c_vc=on
     dtparam=i2c_arm=on
