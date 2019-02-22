@@ -1,3 +1,7 @@
+Introduction
+=
+This project demonstrates how to establish XBee network and send/receive data in transparent mode.
+
 How-to
 =
 1. Establish the Xbee network following the instruction below
