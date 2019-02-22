@@ -1,3 +1,7 @@
+Introduction
+=
+This project demonstrates how to modify parameter settings of XBee in transparent (AT) mode.
+
 How-to
 =
 1. Establish the Xbee network
@@ -10,7 +14,7 @@ Tools
 Interactive AT command shell
 
     usage: term_at.py
-    
+
 ### ATComm.py
 Batch execute AT commands
 
