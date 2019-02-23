@@ -14,6 +14,9 @@ Tools
 Interactive AT command shell
 
     usage: term_at.py
+Once the device is in Command mode, it listens for user input for a while.
+If 10 seconds go by without any user input, the device automatically drops out of Command mode and returns to Transparent mode.
+When that happen, you can simply restart the program.
 
 ### ATComm.py
 Batch execute AT commands
@@ -64,6 +67,10 @@ ATComm.py -c NI: DH: DL:40F7478B
 
     ATDL 40F7478B
     OK
+
+Note: You can also use XCTU for sending AT command to local XBee module.
+
+[XCTU - Generate the AT command frame](https://www.digi.com/resources/documentation/Digidocs/90001942-13/Default.htm#tasks/t_generate_at_command_frame.htm%3FTocPath%3DXBee%2520API%2520mode%7CXBee%2520frame%2520exchange%7CExample%253A%2520configure%2520your%2520local%2520XBee%2520module%7C_____3)
 
 Troubleshooting
 =

@@ -17,24 +17,26 @@ XBee Network Setting
 - Version 9007
 - ZIGBEE TH Reg 405F
 
-## Establish network
-#### Common for 1-on-1 and 1-on-many
-- ID: unique ID for network
-- SC: scan channel set (set apart from nearby network's)
+## Establish Transparent (AT) Network
+#### 1-on-1
+Router-router; NO NEED one to be coordinator
 
-#### 1-on-1 transparent (passthrought)
-Router-router (NO NEED one to be coordinator)
 1. Set DH and DL with partner's address (SH and SL accordingly)
-2. Set name at NI
-3. Transparent-to-Transparent (because we cannot use XBee protocol e.g. all packets start with 7F)
+2. (Optional) Set name at NI
 
-#### 1-on-many transparent
+#### 1-on-many
+Assuming receiving data has a portion indicating the origin, otherwise, coordinator won't know unlike in API mode, which transmits packet with address field.
 - Coordinator
-  1. Set CE=1 (Enable)
-  2. DH=0; DL=FFFF (Talking to anyone)
-  3. Transparent-to-Transparent (because we cannot use XBee protocol e.g. all packets start with 7F)
-- Router
-  1. JV=1 (Channel verification enable)
+  1. ID: unique ID for network
+  2. Set CE=1 (Enable)
+  3. DH=0; DL=FFFF (Talking to anyone)
+- Routers
+  1. ID: same as its Coordinator's
+  2. JV=1 (Verifies if a coordinator exists on the same channel (CH) to join or leave if it cannot be found.)
+
+Note: For Coordinator-Routers network in API mode, check the below:
+
+[XCTU - Configure the XBee modules](https://www.digi.com/resources/documentation/Digidocs/90001942-13/Default.htm#tasks/t_configure_xbees_transmit_receive_data.htm%3FTocPath%3DXBee%2520API%2520mode%7CXBee%2520frame%2520exchange%7CExample%253A%25C2%25A0transmit%2520and%2520receive%2520data%7C_____1)
 
 RS485
 =

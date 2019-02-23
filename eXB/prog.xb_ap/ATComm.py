@@ -35,6 +35,7 @@ if not args['commands']:
 
 # add ATWR to save change(s) made
 args['commands'].append(['WR',''])
+args['commands'].append(['CN',''])
 # first-in first-out
 args['commands'].reverse()
 
@@ -73,8 +74,9 @@ def main():
     global _HALT
     # get into the AT command mode
     print("(Entering AT Command mode..)")
-    time.sleep(3)
+    time.sleep(1)   # preceeding guard time silence
     ser.write("+++")
+    time.sleep(1)   # following guard time silence
 
     try:
         while 1:
