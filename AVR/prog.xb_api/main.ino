@@ -5,7 +5,6 @@
 
 AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
 XBee xbee = XBee();
-// create reusable response objects for responses we expect to handle
 XBeeResponse resp = XBeeResponse();
 ZBRxResponse zb_rx = ZBRxResponse();
 ModemStatusResponse msr = ModemStatusResponse();
@@ -18,7 +17,6 @@ void setup(){
 }
 
 
-// continuously reads packets, looking for ZB Receive or Modem Status
 void loop(){
   xbee.readPacket();
   // getResponse returns an instance of XBeeResponse class
