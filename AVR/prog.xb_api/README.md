@@ -10,4 +10,5 @@ Set to run in Coordinator and API mode, and open term.py for packet monitoring
 2. Create a sample 'Transmission Request' frame targetting XBee on Hana
 
 Resources
+=
 - [xbee-arduino by Andrew Rapp](https://github.com/andrewrapp/xbee-arduino)
