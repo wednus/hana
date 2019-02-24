@@ -8,3 +8,6 @@ Set to run in Coordinator and API mode, and open term.py for packet monitoring
 ## XBee on partner
 1. Establish connection as router in API mode (AP=1)
 2. Create a sample 'Transmission Request' frame targetting XBee on Hana
+
+Resources
+- [xbee-arduino by Andrew Rapp](https://github.com/andrewrapp/xbee-arduino)
