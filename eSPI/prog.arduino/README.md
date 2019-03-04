@@ -14,8 +14,12 @@ Use avrdude with the following options intact as the minimum:
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1
 
-Examples:
+Examples - Flashing
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/blink.hex:i
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
+
+Examples - Fuse Setting
+
+    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U efuse:w:0x00:m -U hfuse:w:0x00:m -U lfuse:w:0x00:m
