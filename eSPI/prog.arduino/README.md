@@ -12,10 +12,10 @@ Arduino Programing
 =
 Use avrdude with the following options intact as the minimum:
 
-    avrdude -c linuxspi -p atmega328p -P /dev/spidev0.1
+    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1
 
 Examples:
 
-    avrdude -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/blink.hex:i
+    avrdude-hackiot -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/blink.hex:i
 
-    avrdude -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
+    avrdude-hackiot -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
