@@ -16,6 +16,6 @@ Use avrdude with the following options intact as the minimum:
 
 Examples:
 
-    avrdude -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/led.hex:i
+    avrdude -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/blink.hex:i
 
     avrdude -q -V -D -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
