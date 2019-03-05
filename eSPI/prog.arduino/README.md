@@ -14,18 +14,26 @@ Use avrdude with the following options intact as the minimum:
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1
 
-Flashing
--
+Testing:
+
+    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -v -v -v
+
+
+### Download Flash to File
+It creates 'firmware.hex' file.
+
+    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1flash:r:firmware.hex:r
+
+### Upload
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/blink.hex:i
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
 
-Fuse Setting
--
+### Fuse Setting
 [WARNNING] Changing fuse setting may brick your device unresponsive for ICSP commands.
 
-    -U efuse:w:0x00:m
-    -U hfuse:w:0x00:m
-    -U lfuse:w:0x00:m
+    -U efuse:w:0x05:m
+    -U hfuse:w:0xDA:m
+    -U lfuse:w:0xFF:m
     -U lock:w:0x00:m
