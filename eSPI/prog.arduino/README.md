@@ -19,7 +19,7 @@ Testing:
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -v -v -v
 
 
-### Download Flash to File
+### Download to File
 It creates 'firmware.hex' file.
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1flash:r:firmware.hex:r
