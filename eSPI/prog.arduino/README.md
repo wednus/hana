@@ -8,7 +8,7 @@ Make the connections between eSPI and Arduino
 - 10 <-> MOSI (D11)
 - 11 <-> SCK (D13)
 
-Programming
+Flashing
 =
 Use avrdude with the following options intact as the minimum:
 
