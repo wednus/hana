@@ -8,7 +8,7 @@ Make the connections between eSPI and Arduino
 - 10 <-> MOSI (D11)
 - 11 <-> SCK (D13)
 
-Arduino Programing
+Programming
 =
 Use avrdude with the following options intact as the minimum:
 
@@ -30,8 +30,12 @@ It creates 'firmware.hex' file.
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
 
-### Fuse Setting
-[WARNNING] Changing fuse setting may brick your device unresponsive for ICSP commands.
+Fuse Settings
+=
+[WARNNING] Changing fuse setting may brick your device unresponsive for further ICSP commands.
+If that happend, you may find this thread informative: https://www.avrfreaks.net/forum/tutsoft-recovering-locked-out-avr
+
+Also, before fuse setting, double-verify your settings using AVR Studio or one of the online tools like this: http://www.engbedded.com/fusecalc/
 
     -U efuse:w:0x05:m
     -U hfuse:w:0xDA:m
