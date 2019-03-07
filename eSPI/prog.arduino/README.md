@@ -14,23 +14,45 @@ Use avrdude with the following options intact as the minimum:
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1
 
-Testing:
-
-    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -v -v -v
-
 
 ### Download to File
 It creates 'firmware.hex' file.
 
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:r:firmware.hex:r
 
-### Upload
+### Compile and Upload
+1. Create blink.ino as below as an example:
 
-    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/blink.hex:i
+        void setup() {
+          pinMode(LED_BUILTIN, OUTPUT);
+        }
+        
+        void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);
+          delay(1000);
+          digitalWrite(LED_BUILTIN, LOW);
+          delay(1000);
+        }
 
-    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:w:demo/fade.hex:i
+2. Create a Makefile in the same directory.
 
-Fuse Settings
+        BOARD_TAG = pro5v328        # <-- modify as needed
+        RESET_CMD = :
+        HACKIOT_MAKEFILE = ./Makefile
+        AVRDUDE_ARD_PROGRAMMER = linuxspi
+        AVRDUDE = /usr/bin/avrdude-hackiot
+        ARDUINO_PORT = /dev/spidev0.1
+        ARDUINO_LIBS =
+        USER_LIB_PATH = /workspace/libraries
+        ARDUINO_DIR = /usr/share/arduino
+        include /usr/share/arduino/Arduino_hackiot.mk
+    
+
+3. Use Arduino-Makefile commands
+
+        make upload
+
+[Advanced] Fuse Settings
 =
 [WARNNING] Changing fuse setting may brick your device unresponsive for further ICSP commands.
 If that happend, you may find this thread informative: https://www.avrfreaks.net/forum/tutsoft-recovering-locked-out-avr
