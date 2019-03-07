@@ -22,7 +22,7 @@ Testing:
 ### Download to File
 It creates 'firmware.hex' file.
 
-    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1flash:r:firmware.hex:r
+    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:r:firmware.hex:r
 
 ### Upload
 
