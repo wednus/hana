@@ -1,4 +1,4 @@
-// This program demonstrates 3-way communication. (XB <-> SBC <-> SBC)
+// This program demonstrates 3-way communication. (XBee <-> SBC <-> RS485)
 
 #include <stddef.h>
 #include <AltSoftSerial.h>
@@ -66,9 +66,9 @@ void getStatus(Stream &port, String label){
 
 void loop() {
   // [Stat Req through XB]
-  xbSerial.write(statReq, sizeof(statReq));
+  //xbSerial.write(statReq, sizeof(statReq));
   // Readout possibly returned stat.
-  getStatus(xbSerial, "XB");
+  //getStatus(xbSerial, "XB");
 
   // [Stat Req through RS485]
   // 1. Prep
