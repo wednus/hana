@@ -13,10 +13,13 @@ Prerequisite
 ------
 Assuming you are on Raspbian:
 
-1. Update /boot/cmdline.txt.
-Remove 'console=serial0,115200'
+1. Update the cmdline.txt and remove 'console=serial0,115200'
 
-2. Update /boot/config.txt. *sudo nano /boot/config.txt*
+        sudo nano /boot/cmdline.txt
+
+2. Update the config.txt.
+
+        sudo nano /boot/config.txt
 
     Copy-paste below at the very bottom (for overriding existing):
 
@@ -24,7 +27,6 @@ Remove 'console=serial0,115200'
         dtoverlay=enc28j60
         dtparam=i2c_vc=on
         dtparam=i2c_arm=on
-        dtoverlay=i2c-rtc,ds3231
         enable_uart=1
         dtoverlay=pi3-miniuart-bt
 
@@ -32,7 +34,9 @@ Remove 'console=serial0,115200'
 
         sudo bash -c "echo 'i2c-dev' >> /etc/modules"
 
-4. Reboot *sudo reboot*
+4. Reboot
+
+        sudo reboot
 
 
 How-to
@@ -47,7 +51,7 @@ How-to
     nano ~/docker-compose.yaml
     </pre>
 
-    2.2. Add below in 'services' section
+    2.2. Add the 'hackiot' block below in the 'services' section
 
         services:
         ...
@@ -61,9 +65,9 @@ How-to
                   - /home/pi/hackiot:/workspace
                 devices:
                   - /dev/mem
+                  - /dev/i2c-1
                   - /dev/gpiomem
                   - /dev/serial0
-                  - /dev/i2c-1
                   - /dev/spidev0.1
                 ports:
                   - 80:80
