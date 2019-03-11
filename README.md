@@ -1,6 +1,6 @@
 Examples for HackIoT Hana SDK
 =============================
-This repository contains the latest examples for HackIoT Hana.
+This repository contains the latest SDK and example projects for HackIoT Hana.
 - [Buy HackIoT Hana at Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
 
 
@@ -34,22 +34,28 @@ Assuming you are on Raspbian:
 
         sudo bash -c "echo 'i2c-dev' >> /etc/modules"
 
-4. Reboot
+4. Install docker and flat running the command:
+
+        curl http://host.wednus.com/getflat | sh
+
+    For more information: [Getting flat](http://flat.wednus.com/getting_flat)
+
+5. Reboot
 
         sudo reboot
 
 
-How-to
+Getting SDK
 ------
-1. Install flat following the instruction at: [Getting flat](http://flat.wednus.com/getting_flat)
+This section explains obtaining SDK within docker container environment that everything is already configured.
 
-2. Install Hana SDK
+1. Install Hana SDK
 
-    2.1. Open docker-compose.yaml file
+    1.1. Open docker-compose.yaml file
 
         nano ~/docker-compose.yaml
 
-    2.2. Add the 'hackiot' block below in the 'services' section
+    1.2. Add the 'hackiot' block below in the 'services' section
 
         services:
         ...
@@ -76,13 +82,13 @@ How-to
 
         ...
 
-    2.3. Create hackiot container
+    1.3. Create hackiot container
 
     <pre>
     docker-compose up -d
     </pre>
 
-    2.4. Open SDK from web browser
+    1.4. Open SDK from web browser
 
     <pre>
     http://[IP Address]/
@@ -90,7 +96,7 @@ How-to
 
     Video Tutorial: [Getting SDK](https://youtu.be/gMTeAAD0RU8?t=66)
 
-3. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
+2. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 
 
 Getting Help
