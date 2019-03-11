@@ -1,16 +1,16 @@
-HackIoT Hana SDK - Examples
-=============================
+SDK for Hana - Examples
+=======================
 This repository contains the latest SDK and example projects for HackIoT Hana.
 - [Buy HackIoT Hana at Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
 
 
-Background
-----------
+About HackIoT Hana
+------------------
 Hana works as an IoT node in stand-alone mode forwarding data to remote partner device, and by connecting to Raspberry Pi like SBCs, it becomes IoT gateway device aggregating data from nodes and processing them for various applications.
 
 
-Prerequisite
-------
+Preparation
+-----------
 Assuming you are on Raspbian:
 
 1. Update the cmdline.txt and remove 'console=serial0,115200'
@@ -46,8 +46,8 @@ Assuming you are on Raspbian:
 
 
 Getting SDK
-------
-This section explains obtaining SDK within docker container environment that everything is already configured.
+-----------
+This section explains how to obtain SDK with examples within docker container environment that everything is already configured.
 
 1. Install Hana SDK
 
@@ -106,7 +106,7 @@ Getting Help
 
 
 Links
----------
+-----
 - [HackIoT Hana Page](http://flat.wednus.com/built-for-flat)
 - [Example Code Github](https://github.com/wednus/hana)
 
@@ -114,3 +114,9 @@ Links
 Pinout
 ------
 [![Pinout Diagram](http://flat.wednus.com/_/rsrc/1549090245745/built-for-flat/hana/HackIoT%20Hana%20-%20Pinout%20Diagram.png)](http://flat.wednus.com/built-for-flat/hana)
+
+
+Troubleshoot
+------------
+- [ERROR] avrdude-hackiot: stk500_getparm(): (a) protocol error, expect=0x14, resp=0x00
+    - Check /boot/cmdline.txt and make sure the removal of ‘console=serial0,115200’
