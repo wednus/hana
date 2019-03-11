@@ -35,7 +35,52 @@ How-to
 ------
 1. Install flat following the instruction at: [Getting flat](http://flat.wednus.com/getting_flat)
 
-2. Install Hana SDK: [Getting SDK](https://youtu.be/gMTeAAD0RU8?t=66)
+2. Install Hana SDK
+
+    2.1. Open docker-compose.yaml file
+
+    <pre>
+    nano ~/docker-compose.yaml
+    </pre>
+
+    2.2. Add below in 'services' section  
+    
+        services:
+        ...
+            hackiot:
+                container_name: hackiot
+                image: wednus/hackiot-hana:sdk
+                volumes:
+                  - /sys:/sys
+                  - /etc/localtime:/etc/localtime:ro
+                  - /home/pi/hackiot:/workspace
+                devices:
+                  - /dev/mem
+                  - /dev/gpiomem
+                  - /dev/serial0
+                  - /dev/i2c-1
+                  - /dev/spidev0.1
+                ports:
+                  - 80:80
+                cap_add:
+                  - sys_rawio
+                  - sys_ptrace
+                restart: always
+        ...
+
+    2.3. Create hackiot container
+    
+    <pre>
+    docker-compose up -d
+    </pre>
+
+    2.4. Open SDK from web browser
+    
+    <pre>
+    http://[IP Address]/
+    </pre>
+    
+    Video Tutorial: [Getting SDK](https://youtu.be/gMTeAAD0RU8?t=66)
 
 3. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 

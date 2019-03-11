@@ -10,4 +10,4 @@ Establish connection as router in either Transparent (AT) or API mode (AP=0 or 1
 
 Resources
 =
-- [xbee-arduino by Andrew Rapp](https://github.com/andrewrapp/xbee-arduino)
+- [xbee-arduino](https://github.com/andrewrapp/xbee-arduino)
