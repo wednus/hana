@@ -1,4 +1,4 @@
-Examples for HackIoT Hana SDK
+HackIoT Hana SDK - Examples
 =============================
 This repository contains the latest SDK and example projects for HackIoT Hana.
 - [Buy HackIoT Hana at Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
