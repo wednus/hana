@@ -47,9 +47,7 @@ How-to
 
     2.1. Open docker-compose.yaml file
 
-    <pre>
-    nano ~/docker-compose.yaml
-    </pre>
+        nano ~/docker-compose.yaml
 
     2.2. Add the 'hackiot' block below in the 'services' section
 
