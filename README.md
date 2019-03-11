@@ -43,10 +43,11 @@ How-to
     nano ~/docker-compose.yaml
     </pre>
 
-    2.2. Add below in 'services' section  
-    
+    2.2. Add below in 'services' section
+
         services:
         ...
+
             hackiot:
                 container_name: hackiot
                 image: wednus/hackiot-hana:sdk
@@ -66,20 +67,21 @@ How-to
                   - sys_rawio
                   - sys_ptrace
                 restart: always
+
         ...
 
     2.3. Create hackiot container
-    
+
     <pre>
     docker-compose up -d
     </pre>
 
     2.4. Open SDK from web browser
-    
+
     <pre>
     http://[IP Address]/
     </pre>
-    
+
     Video Tutorial: [Getting SDK](https://youtu.be/gMTeAAD0RU8?t=66)
 
 3. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
