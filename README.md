@@ -18,17 +18,21 @@ Remove 'console=serial0,115200'
 
 2. Update /boot/config.txt. *sudo nano /boot/config.txt*
 
-Copy-paste below at the very bottom (for overriding existing):
+    Copy-paste below at the very bottom (for overriding existing):
 
-    dtparam=spi=on
-    dtoverlay=enc28j60
-    dtparam=i2c_vc=on
-    dtparam=i2c_arm=on
-    dtoverlay=i2c-rtc,ds3231
-    enable_uart=1
-    dtoverlay=pi3-miniuart-bt
+        dtparam=spi=on
+        dtoverlay=enc28j60
+        dtparam=i2c_vc=on
+        dtparam=i2c_arm=on
+        dtoverlay=i2c-rtc,ds3231
+        enable_uart=1
+        dtoverlay=pi3-miniuart-bt
 
-3. Reboot *sudo reboot*
+3. add the 'i2c-dev' to /etc/modules
+
+        sudo bash -c "echo 'i2c-dev' >> /etc/modules"
+
+4. Reboot *sudo reboot*
 
 
 How-to
