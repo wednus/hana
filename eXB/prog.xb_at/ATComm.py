@@ -74,7 +74,7 @@ def main():
     global _HALT
     # get into the AT command mode
     print("(Entering AT Command mode..)")
-    time.sleep(1)   # preceeding guard time silence
+    time.sleep(3)   # preceeding guard time silence
     ser.write("+++")
     time.sleep(1)   # following guard time silence
 
