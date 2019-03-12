@@ -20,12 +20,12 @@ Examples
     esptool.py -p /dev/serial0 -b 19200 \
       --before no_reset --after no_reset --no-stub \
       flash_id
-    
+
     esptool.py -p /dev/serial0 -b 19200 \
       --before no_reset --after no_reset --no-stub \
-      write_flash --flash_freq 40m --flash_mode qio \
+      write_flash --flash_freq 40m --flash_mode qio \ews
       0x0000 ./nodemcu-float.bin
-      
+
     esptool.py -p /dev/serial0 -b 19200 \
       --before no_reset --after no_reset --no-stub \
       write_flash --flash_freq 40m --flash_mode qio \
@@ -46,6 +46,6 @@ LUA Basics
     end
 
     l = file.list();
-    for k,v in pairs(l) do     
+    for k,v in pairs(l) do
         print("name:"..k..", size:"..v)
     end
