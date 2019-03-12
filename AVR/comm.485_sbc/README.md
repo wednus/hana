@@ -1,5 +1,5 @@
 Preparation
 =
-Connect RS485 device to the RS485 port next to the power.
+Connect RS485 device
 
-Upload the main.ino to the AVRRESET_CMD
+Upload the main.ino to the AVR
