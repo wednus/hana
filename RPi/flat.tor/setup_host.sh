@@ -2,10 +2,6 @@
 BACKUP="docker-compose_backup_$(date +'%m%d%y_%H%M%S').yaml"
 
 echo
-echo "[flat] Pull docker image.."
-docker pull wednus/rpi-torproxy
-
-echo
 echo "[flat] Backup docker-compose.yaml .."
 mv ./docker-compose.yaml ./${BACKUP}
 
@@ -20,8 +16,7 @@ sed '/services:/a \
 
 echo
 echo "[flat] Create container.."
-docker-compose up -d
+docker-compose up -d --remove-orphans
 
 echo
-echo "[flat] Done."
-echo
+echo "[flat] Completed."
