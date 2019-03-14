@@ -14,12 +14,12 @@ void setup(){
 void loop(){
   if (Serial.available()){
     digitalWrite(rePin, HIGH);
-    rsSerial.write(Serial.read());    // SBC > 485
+    rsSerial.write(Serial.read());    // SBC > RS485
     rsSerial.flush();                 // wait for the trasnmission of outgoing data
     digitalWrite(rePin, LOW);
   }
   if (rsSerial.available()){
-    Serial.write(rsSerial.read());    // 485 > SBC
+    Serial.write(rsSerial.read());    // RS485 > SBC
     Serial.flush();
   }
 }

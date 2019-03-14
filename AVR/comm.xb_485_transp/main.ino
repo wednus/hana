@@ -21,7 +21,7 @@ void loop(){
     digitalWrite(rePin, LOW);
   }
   if (spSerial.available()){
-    xbSerial.write(spSerial.read());    // 485 > XB
+    xbSerial.write(spSerial.read());  // 485 > XB
     xbSerial.flush();
   }
 }

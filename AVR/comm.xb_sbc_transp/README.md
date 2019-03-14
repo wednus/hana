@@ -1,5 +1,7 @@
-Introduction
+XBee-SBC Transparent
 =
+***Maturity: Released***
+
 This project demonstrates how to establish XBee network and send/receive data in transparent mode.
 
 How-to
@@ -25,7 +27,7 @@ Router-router; NO NEED one to be coordinator
 2. (Optional) Set name at NI
 
 #### 1-on-many
-Assuming receiving data has a portion indicating the origin, otherwise, coordinator won't know unlike in API mode, which transmits packet with address field.
+Assuming receiving data has a portion indicating the origin, otherwise, coordinator won't know the origin unlike in API mode which transmits packet with address field.
 - Coordinator
   1. ID: unique ID for network
   2. Set CE=1 (Enable)
