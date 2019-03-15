@@ -1,11 +1,12 @@
 #include <SoftwareSerial.h>
 
 SoftwareSerial rsSerial(3, 4);  // RX:3, TX:4, RE:7
-int rePin = 7;
+const int rePin = 7;
+const int baud = 9600;
 
 void setup(){
-  Serial.begin(9600);
-  rsSerial.begin(9600);
+  Serial.begin(baud);
+  rsSerial.begin(baud);
   pinMode(rePin, OUTPUT); // RE for RS485
 }
 
@@ -15,11 +16,8 @@ void loop(){
     PORTD |= B10000000;
     rsSerial.write(Serial.read());    // SBC > RS485
     PORTD &= B01111111;
-    rsSerial.flush();                 // wait for the trasnmission of outgoing data
   }
 
-  if (rsSerial.available()){
+  if (rsSerial.available())
     Serial.write(rsSerial.read());    // RS485 > SBC
-    Serial.flush();
-  }
 }
