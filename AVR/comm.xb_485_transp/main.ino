@@ -22,6 +22,8 @@ void loop(){
     xbSerial.write(spSerial.read());  // 485 > XB
   }
 
+  delay(1);  // adjust delay per the response timing
+
   if(xbSerial.available()){
     if(index < maxBufSize){  // prevent out-of-boundary error
       buf[index++] = xbSerial.read();
@@ -32,12 +34,11 @@ void loop(){
     //Serial.write((const uint8_t*)buf, index);
     //Serial.flush();
     //delay(100);
-    delay(3000);  // adjust delay per the response timing
-    
+
     PORTD |= B10000000;
     spSerial.write((const uint8_t*)buf, index);
-    index = 0;
     spSerial.flush();
     PORTD &= B01111111;
+    index = 0;
   }
 }
