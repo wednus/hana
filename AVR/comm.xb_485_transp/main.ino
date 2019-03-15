@@ -3,10 +3,10 @@
 
 AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
 SoftwareSerial spSerial(3, 4);  // RX:3, TX:4, RE:7
-int rePin = 7;
+const int rePin = 7;
 const int baud = 9600;
-const int maxBufSize = 100;
-char buf[maxBufSize] = "";
+const int maxBufSize = 100;     // must be bigger than max packet size
+char buf[maxBufSize];
 int index = 0;
 
 void setup(){
@@ -22,7 +22,7 @@ void loop(){
     xbSerial.write(spSerial.read());  // 485 > XB
   }
 
-  delay(1);  // adjust delay per the response timing
+  delay(1);  // [IMPORTANT] adjust delay per the response timing
 
   if(xbSerial.available()){
     if(index < maxBufSize){  // prevent out-of-boundary error
@@ -33,8 +33,6 @@ void loop(){
   }else if(index != 0){
     //Serial.write((const uint8_t*)buf, index);
     //Serial.flush();
-    //delay(100);
-
     PORTD |= B10000000;
     spSerial.write((const uint8_t*)buf, index);
     spSerial.flush();
