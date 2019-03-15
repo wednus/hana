@@ -7,7 +7,6 @@ void setup(){
   Serial.begin(9600);
   rsSerial.begin(9600);
   pinMode(rePin, OUTPUT); // RE for RS485
-  pinMode(2, OUTPUT);     // RE for SBC   
 }
 
 
