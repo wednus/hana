@@ -13,11 +13,12 @@ void setup(){
 
 void loop(){
   if (Serial.available()){
-    digitalWrite(rePin, HIGH);
+    PORTD |= B10000000;
     rsSerial.write(Serial.read());    // SBC > RS485
+    PORTD &= B01111111;
     rsSerial.flush();                 // wait for the trasnmission of outgoing data
-    digitalWrite(rePin, LOW);
   }
+
   if (rsSerial.available()){
     Serial.write(rsSerial.read());    // RS485 > SBC
     Serial.flush();
