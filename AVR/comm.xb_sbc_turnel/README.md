@@ -27,14 +27,17 @@ Router-router; NO NEED one to be coordinator
 2. (Optional) Set name at NI
 
 #### 1-on-many
-Assuming receiving data has a portion indicating the origin, otherwise, coordinator won't know the origin unlike in API mode which transmits packet with address field.
 - Coordinator
   1. ID: unique ID for network
   2. Set CE=1 (Enable)
   3. DH=0; **DL=FFFF** (to talk to any node)
+  4. AP=0 (Transparent)
 - Routers
   1. ID: same as its Coordinator's
   2. JV=1 (Verifies if a coordinator exists on the same channel (CH) to join or leave if it cannot be found.)
+  3. AP
+      - 0 (Transparent)
+      - 1 (API Mode): It is allowed for special case when router wants to know the origin of the packet.; The packet will start with '7E' and include the MAC ID.
 
 Note: For Coordinator-Routers network in API mode, check the below:
 

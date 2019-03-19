@@ -1,9 +1,10 @@
 #include <AltSoftSerial.h>
 AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
+const int baud = 9600;
 
 void setup(){
-  Serial.begin(9600);
-  xbSerial.begin(9600);
+  Serial.begin(baud);
+  xbSerial.begin(baud);
 }
 
 
