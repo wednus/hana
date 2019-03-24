@@ -11,7 +11,7 @@ Thx!
 */
 
 #include "LedControl.h"  // Library used for communcation with 7 segment
-LedControl lc=LedControl(A1,A3,A2,1);  //  (DIN, CLK, LOAD, number of Max7219 chips)
+LedControl lc=LedControl(A5,A3,A4,1);  //  (DIN, CLK, LOAD, number of Max7219 chips)
 
 // Variable to hold current scores
 int displayone=0;

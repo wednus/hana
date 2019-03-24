@@ -1,5 +1,5 @@
 #include "LedControl_HackIoT.h"
-LedControl lc = LedControl(A1,A3,A2,1);  //  (DIN, CLK, LOAD, number of Max7219 chips)
+LedControl lc = LedControl(A5,A3,A4,1);  //  (DIN, CLK, LOAD, number of Max7219 chips)
 
 void setup(){
   lc.shutdown(0,false);

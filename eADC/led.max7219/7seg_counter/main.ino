@@ -20,10 +20,10 @@
 
 // pin 13 of MAX7219 (CLK)
 const int clock_pin = A3;
-// pin 12 of MAX7219 (LOAD)
-const int data_latch_pin = A2;
+// pin 12 of MAX7219 (CSs)
+const int data_latch_pin = A4;
 // pin 1 of MAX7219 (DIN)
-const int data_input_pin = A1;
+const int data_input_pin = A5;
 
 // digit pattern for a 7-segment display. datasheet table 5
 const byte digit_pattern[16] = {

@@ -1,6 +1,6 @@
 #include "LedControl.h"
 
-LedControl lc=LedControl(A1,A3,A2,2);  // Pins: DIN,CLK,CS, # of Display connected
+LedControl lc=LedControl(A5,A3,A4,2);  // Pins: DIN,CLK,CS, # of Display connected
 
 unsigned long delayTime=200;  // Delay between Frames
 
