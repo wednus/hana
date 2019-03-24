@@ -120,3 +120,9 @@ Troubleshoot
 ------------
 - [ERROR] avrdude-hackiot: stk500_getparm(): (a) protocol error, expect=0x14, resp=0x00
     - Check /boot/cmdline.txt and make sure the removal of ‘console=serial0,115200’
+- [ERROR] avrdude-hackiot: stk500_getsync() attempt 1 of 10: not in sync: resp=0x00
+    - cause: /dev/serial0 is not available
+    - Make sure there's no program occupying serial0. (e.g. python scripts)
+
+#### The Last Resort
+If all your troubleshoot effort failed, you may want to start over from reflashing the micro SD card.

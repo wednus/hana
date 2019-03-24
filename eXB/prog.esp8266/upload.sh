@@ -9,7 +9,6 @@
 # set -x   # Uncomment to debug this shell script
 
 # prep
-make upload     # upload serial pass-through sketch (SBC <-> AVR <-> EXP_COMM)
 gpio mode 2 out # GPIO27(mode): 'out' && 0 => PROG | 'in' => RUN
 gpio mode 7 out # GPIO4(reset): ESP reset pin
 gpio write 2 0  # set PROG mode
@@ -19,7 +18,7 @@ gpio write 7 0
 gpio write 7 1
 
 # test (optional)
-./esptool.py -p /dev/serial0 -b 19200 \
+./esptool.py -p /dev/serial0 -b 9600 \
   --before no_reset --after no_reset --no-stub \
   flash_id
 echo
