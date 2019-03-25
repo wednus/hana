@@ -7,15 +7,15 @@ float voltage;
 float current;
 float power;
 
-void printOutput(void) {
-  Serial.print("Voltage: "); Serial.print(voltage, 3); Serial.println(" V");
-  Serial.print("Ampere: "); Serial.print(current, 3); Serial.println(" mA");
-  Serial.print("Power: "); Serial.print(power, 3); Serial.println(" mW");
+void setup()   {     
+  Serial.begin(9600);
 }
 
 
-void setup()   {     
-  Serial.begin(9600);
+void printOutput() {
+  Serial.print("Voltage: "); Serial.print(voltage, 3); Serial.println(" V");
+  Serial.print("Ampere: "); Serial.print(current, 3); Serial.println(" mA");
+  Serial.print("Power: "); Serial.print(power, 3); Serial.println(" mW");
 }
 
 
@@ -32,7 +32,7 @@ void measure() {
 
 
 void loop() {
-  delay(1000);
   measure();
   printOutput();
+  delay(1000);
 }
