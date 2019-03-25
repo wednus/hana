@@ -70,10 +70,24 @@ ATComm.py -c NI: DH: DL:40F7478B
 
 Note: You can also use XCTU for sending AT command to local XBee module.
 
+##### Examples
+- Join coordinator on PAN ID=45 as a transparent node
+
+      ./ATComm.py -c ID:45 JV:1 AP:0
+
 [XCTU - Generate the AT command frame](https://www.digi.com/resources/documentation/Digidocs/90001942-13/Default.htm#tasks/t_generate_at_command_frame.htm%3FTocPath%3DXBee%2520API%2520mode%7CXBee%2520frame%2520exchange%7CExample%253A%2520configure%2520your%2520local%2520XBee%2520module%7C_____3)
 
-Troubleshooting
+Troubleshoot
 =
 ### 'module' object has no attribute 'Serial'
+- cause: wrong 'serial' python module installed
+
+Uninstall and reinstall the correct module:
+
     pip uninstall serial
     pip install pyserial
+
+### No 'OK' prompt
+- cause: XBee module is in API mode or using API firmware (e.g. 'ZigBee Router API')
+
+Connect the module to a PC; use XCTU and switch to an AT firmware ('ZigBee Router AT')
