@@ -15,42 +15,42 @@ Use avrdude with the following options intact as the minimum:
     avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1
 
 
-### Download to File
-It creates 'firmware.hex' file.
-
-    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:r:firmware.hex:r
-
-### Compile and Upload
+### Compile and Upload (.hex -> Arduino)
 1. Create blink.ino as below as an example:
 
-        void setup() {
-          pinMode(LED_BUILTIN, OUTPUT);
-        }
+       void setup() {
+         pinMode(LED_BUILTIN, OUTPUT);
+       }
         
-        void loop() {
-          digitalWrite(LED_BUILTIN, HIGH);
-          delay(1000);
-          digitalWrite(LED_BUILTIN, LOW);
-          delay(1000);
-        }
+       void loop() {
+         digitalWrite(LED_BUILTIN, HIGH);
+         delay(1000);
+         digitalWrite(LED_BUILTIN, LOW);
+         delay(1000);
+       }
 
 2. Create a Makefile in the same directory.
 
-        BOARD_TAG = pro5v328        # <-- modify as needed
-        RESET_CMD = :
-        HACKIOT_MAKEFILE = ./Makefile
-        AVRDUDE_ARD_PROGRAMMER = linuxspi
-        AVRDUDE = /usr/bin/avrdude-hackiot
-        ARDUINO_PORT = /dev/spidev0.1
-        ARDUINO_LIBS =
-        USER_LIB_PATH = /workspace/libraries
-        ARDUINO_DIR = /usr/share/arduino
-        include /usr/share/arduino/Arduino_hackiot.mk
+       BOARD_TAG = pro5v328        # <-- modify as needed
+       RESET_CMD = :
+       HACKIOT_MAKEFILE = ./Makefile
+       AVRDUDE_ARD_PROGRAMMER = linuxspi
+       AVRDUDE = /usr/bin/avrdude-hackiot
+       ARDUINO_PORT = /dev/spidev0.1
+       ARDUINO_LIBS =
+       USER_LIB_PATH = /workspace/libraries
+       ARDUINO_DIR = /usr/share/arduino
+       include /usr/share/arduino/Arduino_hackiot.mk
     
 
 3. Use Arduino-Makefile commands
 
-        make upload
+       make upload
+
+### Download (Arduino -> .hex)
+It will download the Arduino's memory contents and create 'firmware.hex' file.
+
+    avrdude-hackiot -c linuxspi -p atmega328p -P /dev/spidev0.1 -U flash:r:firmware.hex:r
 
 [Advanced] Fuse Settings
 =
