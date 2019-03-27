@@ -62,3 +62,15 @@ LED Indication
 Commissioning Button
 =
 - 4-click: Reset parameters & join new network
+
+Troubleshoot
+=
+#### Communication problem
+- XCTU's (Sender) input only echo-back and not transmit through to the receiver;
+  - Try update the firmware
+
+#### Xbee module issues
+- LED (ASC) lights up dim.
+  - cause: failed during firmware update, or, fragmented firmware
+  - fix: Try update the firmware after recovery
+  - ref: http://www.libelium.com/development/waspmote/documentation/upgrading-xbee-firmware/
