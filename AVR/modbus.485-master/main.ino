@@ -1,4 +1,5 @@
-#include <SimpleModbusMaster.h>
+#include <SoftwareSerial.h>
+#include <SimpleModbusMasterSoftwareSerial.h>
 
 /* To communicate with a slave you need to create a 
    packet that will contain all the information
@@ -86,8 +87,9 @@
 // set the "connection" variable to true.
 #define retry_count 10 
 
+// HackIoT Hana
 // used to toggle the receive/transmit pin on the driver
-#define TxEnablePin 2 
+#define TxEnablePin 7
 
 // This is the easiest way to create new packets
 // Add as many as you want. TOTAL_NO_OF_PACKETS
@@ -117,21 +119,18 @@ unsigned int regs[9];
 void setup()
 {
   // read 3 registers starting at address 0
-  // Sundew: accessing the Slave #1
   packet1->id = 1;
   packet1->function = READ_HOLDING_REGISTERS;
   packet1->address = 0;
   packet1->no_of_registers = 1;
   packet1->register_array = regs;
-  
-  /*
+
   // write the 9 registers to the PLC starting at address 3
   packet2->id = 1;
   packet2->function = PRESET_MULTIPLE_REGISTERS;
   packet2->address = 3;
   packet2->no_of_registers = 9;
   packet2->register_array = regs;
-  */
 
   // P.S. the register_array entries above can be different arrays
   
@@ -158,11 +157,9 @@ void loop()
   regs[3] = packet1->requests;
   regs[4] = packet1->successful_requests;
   regs[5] = packet1->total_errors;
-  /*
   regs[6] = packet2->requests;
   regs[7] = packet2->successful_requests;
-  regs[8] = packet2->total_errors; 
-  */
+  regs[8] = packet2->total_errors;
   
   // Sundew: LED (AVR) indication for the data fetched
   for(int i = 0; i < packet1->register_array[0]; i++){

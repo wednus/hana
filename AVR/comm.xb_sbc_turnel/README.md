@@ -66,11 +66,12 @@ Commissioning Button
 Troubleshoot
 =
 #### Communication problem
-- XCTU's (Sender) input only echo-back and not transmit through to the receiver;
-  - Try update the firmware
+- XCTU's (sender) input only echo-back and not transmit to the receiver;
+  - cause: In 1-on-many mode, the coordinator must have been set to receive-only (DL=0)
+  - fix: set DL=**FFFF** (!!!)
 
 #### Xbee module issues
 - LED (ASC) lights up dim.
   - cause: failed during firmware update, or, fragmented firmware
-  - fix: Try update the firmware after recovery
+  - fix: Try update the firmware after recovery; recovery can be repeated until success.
   - ref: http://www.libelium.com/development/waspmote/documentation/upgrading-xbee-firmware/

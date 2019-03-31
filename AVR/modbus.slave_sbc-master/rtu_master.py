@@ -9,6 +9,9 @@
  This is distributed under GNU LGPL license, see license.txt
 """
 
+import sys
+sys.path.append('/workspace/libraries/python/modbus-tk')
+
 import time
 import serial
 

@@ -10,6 +10,7 @@
 """
 
 import sys
+sys.path.append('/workspace/libraries/python/modbus-tk')
 
 import modbus_tk
 import modbus_tk.defines as cst
