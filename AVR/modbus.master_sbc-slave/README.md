@@ -9,7 +9,7 @@ This program demonstrate how to implemnt Modbus RTU master on AVR and access the
 ## How-to
 First, run:
 
-    python3 rtu_slave.py
+    python3 ./rtu_slave.py
 
 Set the register value:
 

@@ -1,4 +1,4 @@
-Modbus RTU Slave
+Modbus RTU Slave for SBC as Master
 =
 Implement Modbus slave on AVR
 
