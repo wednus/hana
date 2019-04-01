@@ -47,33 +47,8 @@ def serial_monitor():
             sys.stdout.flush()
 
 
-def upload(filename):
-    ser.write('if file.open("'+ filename +'", "a+") then' + '\r\n')
-    f = open(filename)
-    for line in f:
-        line = line.replace("\n", "")
-        line = line.replace("'", r"\'")
-        ser.write('file.writeline(\''+ line +'\')' + '\r\n')
-        time.sleep(0.3)
-    ser.write('file.close()' + '\r\n')
-    ser.write('end' + '\r\n')
-    ser.flush()
-    
-
-def list():
-    ser.write('l = file.list();' + '\r\n')
-    ser.write('for k,v in pairs(l) do' + '\r\n')
-    ser.write('  print("name:"..k..", size:"..v)' + '\r\n')
-    ser.write('end' + '\r\n')
-
-
 def main():
     global _HALT
-    print "[Simple Serial Terminal] - "+ args['baud'] + "\r\nEnter 'Ctrl-C' to exit."
-    ser.write("=node.info()\r\n")
-    list()
-    ser.flush()
-    
     # start terminal mode
     thread = threading.Thread(target=serial_monitor)
     thread.start()
