@@ -30,7 +30,6 @@ ser.isOpen()
 ser.write('\r\n')
 ser.flush()
 
-
 os.system('clear')
 _HALT = False
 # Serial read in background       
@@ -49,6 +48,8 @@ def serial_monitor():
 
 def main():
     global _HALT
+    print "[Simple Serial Terminal] - "+ args['baud'] + "\r\nEnter 'Ctrl-C' to exit."
+
     # start terminal mode
     thread = threading.Thread(target=serial_monitor)
     thread.start()
