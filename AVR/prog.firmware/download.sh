@@ -1,9 +1,11 @@
 #!/bin/sh
-# This script download the AVR's flash contents into firmware.bin.
+# This script downloads the specified firmware (*.bin) into AVR's flash memory.
+# ATMega328p: Flash (32Kb), EEPROM (1Kb)
 
-# backup existing
-if [ -f firmware.bin ]; then
-  mv firmware.bin firmware_backup_$(date +'%m%d%y_%H%M%S').bin
-fi
+avrdude -p m328p -P /dev/serial0 -c arduino -b 57600 -U flash:w:$1
 
-avrdude -p m328p -P /dev/serial0 -c arduino -b 57600 -U flash:r:firmware.bin:r
+#avrdude -p m328p -P /dev/serial0 -c arduino -b 57600 -U flash:w:$1 \
+#    -U eeprom:w:eeprom.hex \
+#    -U efuse:w:0xFD:m \
+#    -U hfuse:w:0xDA:m \
+#    -U lfuse:w:0xFF:m
