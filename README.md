@@ -95,6 +95,12 @@ This section explains how to obtain SDK with examples within docker container en
 2. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 
 
+SDK Updater
+-----------
+1. In the SDK (cloud9) IDE, open 'RPi/flat.hana_upgrade' sub-project.
+2. Open README.md file and follow the instruction.
+
+
 Getting Help
 ------------
 - [flat User Group](https://groups.google.com/d/forum/goflat)
