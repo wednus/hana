@@ -1,5 +1,5 @@
 #include <AltSoftSerial.h>
-AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
+AltSoftSerial  xbSerial;
 const int baud = 9600;
 
 void setup(){

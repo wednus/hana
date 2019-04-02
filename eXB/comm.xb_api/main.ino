@@ -3,7 +3,7 @@
 #include <XBee.h>
 #include <AltSoftSerial.h>
 
-AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
+AltSoftSerial  xbSerial;        // RX:8, TX:9, NA:10
 XBee xbee = XBee();
 XBeeResponse resp = XBeeResponse();
 ZBRxResponse zb_rx = ZBRxResponse();
