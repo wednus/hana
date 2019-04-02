@@ -124,8 +124,24 @@ Pinout
 [![Pinout Diagram](http://flat.wednus.com/_/rsrc/1549090245745/built-for-flat/hana/HackIoT%20Hana%20-%20Pinout%20Diagram.png)](http://flat.wednus.com/built-for-flat/hana)
 
 
+Known Issues
+------------
+#### SDK (web IDE) loading after reboot takes too long 
+One drawback of newer docker engines is they take longer init time. (i.e. 8~12 minutes w/ RPi0)
+There is nothing fundamentally we can do until the docker fix this or our SBC get much faster.
+There are, however, a couple of walkarounds to consider before reboot:
+
+- For faster IDE start
+  - Do not close the SDK IDE browser tab and leave it open until it reconnects itself after reboot. 
+- For easier wait
+  - Run 'docker ps' command and wait until it returns result.
+    
+    With this, at least, we get to know when the SDK is ready exactly without keep refreshing the browser tab. 
+
+
 Troubleshoot
 ------------
+
 #### During AVR upload
 - [ERROR] avrdude-hackiot: stk500_getparm(): (a) protocol error, expect=0x14, resp=0x00
     - Check /boot/cmdline.txt and make sure the removal of ‘console=serial0,115200’
