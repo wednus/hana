@@ -126,15 +126,15 @@ Pinout
 
 Known Issues
 ------------
-#### SDK (web IDE) loading after reboot takes too long 
-One drawback of newer docker engines is they take longer init time. (i.e. 8~12 minutes w/ RPi0)
+#### SDK (web IDE) loading takes too long 
+One drawback of newer docker engines is they take longer init time. (i.e. 8 ~ 12 minutes w/ RPi0)
 There is nothing fundamentally we can do until the docker fix this or our SBC get much faster.
 There are, however, a couple of walkarounds to consider before reboot:
 
 - For faster IDE start
   - Do not close the SDK IDE browser tab and leave it open until it reconnects itself after reboot. 
 - For easier wait
-  - Run 'docker ps' command and wait until it returns result.
+  - Run 'docker ps' command and wait until it returns result. (== ready)
     
     With this, at least, we get to know when the SDK is ready exactly without keep refreshing the browser tab. 
 

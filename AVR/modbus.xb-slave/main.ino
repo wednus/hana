@@ -1,8 +1,8 @@
-#include <SoftwareSerial.h>
-#include <SimpleModbusSlaveSoftwareSerial.h>
+#include <AltSoftSerial.h>
+#include <SimpleModbusSlaveAltSoftSerial.h>
 
 #define baud 9600
-#define re_pin 7
+#define re_pin 1  // <2 to disable
 #define slave_id 1
 
 enum{
