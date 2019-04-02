@@ -1,12 +1,13 @@
-SDK for Hana - Examples
-=======================
-This repository contains the latest SDK and example projects for HackIoT Hana.
-- [Buy HackIoT Hana at Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
+HackIoT Hana
+================
+Demo Projects for SDK
+-------------
+This repository contains the demo projects for the SDK of HackIoT Hana.
 
-
-About HackIoT Hana
+About Hana
 ------------------
 Hana works as an IoT node in stand-alone mode forwarding data to remote partner device, and paried with a Raspberry Pi like SBC, it becomes IoT gateway device aggregating data from nodes and processing them for various applications.
+- [Buy HackIoT Hana at Tindie Store](https://www.tindie.com/products/sundew/hackiot-hana/)
 
 
 Preparation
@@ -94,6 +95,7 @@ This section explains how to obtain SDK with examples within docker container en
 
 2. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 
+   Note: For the minimal SDK without demo projects, use 'wednus/hackiot-hana' docker image instead.
 
 SDK Updater
 -----------
