@@ -50,6 +50,8 @@ Getting SDK
 -----------
 This section explains how to obtain SDK with examples within docker container environment that everything is already configured.
 
+For a quick video tutorial, watch [Getting SDK for HackIoT Hana](https://youtu.be/gMTeAAD0RU8?t=66).
+
 1. Install Hana SDK
 
     1.1. Open docker-compose.yaml file
@@ -82,6 +84,8 @@ This section explains how to obtain SDK with examples within docker container en
            restart: always
 
         ...
+        
+    Note: The image 'wednus/hackiot-hana:sdk' contains SDK & this demo projects as well. For SDK without demos, use 'wednus/hackiot-hana' instead.
 
     1.3. Create hackiot container
 
@@ -91,11 +95,9 @@ This section explains how to obtain SDK with examples within docker container en
 
        http://[IP Address]/
 
-    Video Tutorial: [Getting SDK](https://youtu.be/gMTeAAD0RU8?t=66)
-
-2. Check the rest of tutorials and subscibe for future updates: [HackIoT Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
-
-   Note: For the minimal SDK without demo projects, use 'wednus/hackiot-hana' docker image instead.
+2. Check the other tutorials and subscibe for future updates:
+ 
+   [HackIoT Youtube Channel](https://www.youtube.com/watch?v=gMTeAAD0RU8&list=PLZUCEVEg3M0zYlqqQph_oWH438ZeypqRk)
 
 SDK Updater
 -----------
