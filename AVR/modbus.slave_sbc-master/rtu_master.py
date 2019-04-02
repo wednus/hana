@@ -8,6 +8,7 @@ import modbus_tk
 import modbus_tk.defines as cst
 from modbus_tk import modbus_rtu
 
+slave_id = 1
 PORT = '/dev/serial0'
 
 def main():
@@ -23,7 +24,7 @@ def main():
     
             # We need this because the arduino resets after opening the port.
             time.sleep(2)
-            ledState = master.execute(1, cst.READ_HOLDING_REGISTERS, 0, 1)[0]
+            ledState = master.execute(slave_id, cst.READ_HOLDING_REGISTERS, 0, 1)[0]
             logger.info(ledState)
             
             # toggle LED (AVR) on slave
@@ -33,7 +34,7 @@ def main():
                 ledState = 0
     
             logger.info(master.execute(1, cst.WRITE_MULTIPLE_REGISTERS, 0, output_value=(ledState, )))
-    
+
         except modbus_tk.modbus.ModbusError as exc:
             logger.error("%s- Code=%d", exc, exc.get_exception_code())
 

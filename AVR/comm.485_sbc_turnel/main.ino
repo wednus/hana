@@ -25,25 +25,3 @@ void loop(){
     Serial.flush();
   }
 }
-
-/*
-// alternative solution
-void loop(){
-  if (Serial.available()){
-    PORTD |= B10000000;
-    while (Serial.available()){
-      rsSerial.write(Serial.read());    // SBC > RS485
-    }
-    // [IMPORTANT]: rsSerial.read will read-back ('00') immediatly without it.
-    rsSerial.flush();
-    PORTD &= B01111111;
-  }
-
-  if (rsSerial.available()){
-    while (rsSerial.available()){
-      Serial.write(rsSerial.read());    // RS485 > SBC
-    }
-    Serial.flush();
-  }
-}
-*/

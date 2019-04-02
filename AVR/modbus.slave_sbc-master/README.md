@@ -1,18 +1,26 @@
-Modbus RTU Slave for SBC as Master
+Modbus RTU Slave
 =
-Implement Modbus slave on AVR
+Implement Modbus slave on AVR and SBC as master
 
 ## Purpose
 This program demonstrate how to implemnt Modbus RTU slave on AVR and access the registers from SBC as master.
 
 ## Requirement
-- python3
 - pyserial
   
+## How-to
+1. Upload the main.ino
+2. Run the testing program.
+
+       python ./rtu_master.py
+    
+
 ## Troubleshoot
 
 #### AttributeError: 'Serial' object has no attribute 'is_open'
-You are using older version of pySerial. You can either get later version of pySerial, or use isOpen() to replace is_open.
+Run with the command:
 
-    apt-get update && apt-get install python3 python3-pip
-    pip3 install pyserial
+    python ./rtu_master.py
+    
+#### modbus_tk.modbus.ModbusInvalidResponseError: Response length is invalid 0
+- cause: the Modbus Slave is not running

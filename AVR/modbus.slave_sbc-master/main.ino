@@ -1,7 +1,8 @@
 #include <SimpleModbusSlave.h>
 
-const int rePin = 1;  // ignore if <2
-const int baud = 9600;
+#define baud 9600
+#define re_pin 1  // ignore if <2
+#define slave_id 1
 
 enum{     
   LED_STATE,
@@ -25,7 +26,7 @@ void setup(){
      but practically it works with all major modbus master implementations.
   */
   
-  modbus_configure(baud, 1, rePin, TOTAL_REGS_SIZE, 0);
+  modbus_configure(baud, slave_id, re_pin, TOTAL_REGS_SIZE, 0);
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
