@@ -18,9 +18,9 @@ This program demonstrate how to implemnt Modbus RTU slave on AVR and access the 
 ## Troubleshoot
 
 #### AttributeError: 'Serial' object has no attribute 'is_open'
-Run with the command:
+Upgrade pyserial v3.0 or higher:
 
-    python ./rtu_master.py
+    pip install pyserial --upgrade
     
 #### modbus_tk.modbus.ModbusInvalidResponseError: Response length is invalid 0
 - cause: the Modbus Slave is not running
