@@ -5,7 +5,7 @@ Demo Projects for SDK
 This repository contains the demo projects for the SDK of HackIoT Hana.
 
 IMPORTANT: The project code here assumes the target SBC's specific H/W (e.g. RPi + Hana) and S/W environment prepared as docker images,
-and all the images introduced here are freely available.
+and all the images introduced here are freely available readily to be pulled. (docker pull)
 
 About Hana
 ------------------

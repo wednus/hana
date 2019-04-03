@@ -2,14 +2,12 @@
 #include <SimpleModbusSlaveAltSoftSerial.h>
 
 #define baud 9600
-#define re_pin 1  // <2 to disable
+#define re_pin 1    // <2 to disable
 #define slave_id 1
 
 enum{
   LED_NEXT,
   LED_NOW,
-  TOTAL_ERRORS,
-  // leave this one
   TOTAL_REGS_SIZE 
 };
 
@@ -21,7 +19,7 @@ void setup(){
 }
 
 void loop(){
-  holdingRegs[TOTAL_ERRORS] = modbus_update(holdingRegs);
+  modbus_update(holdingRegs);
   // read the LED_STATE register value and set the onboard LED high or low with function 16
   digitalWrite(LED_BUILTIN, holdingRegs[LED_NOW]);
   holdingRegs[LED_NEXT] = !holdingRegs[LED_NOW];

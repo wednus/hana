@@ -1,6 +1,8 @@
 #include <AltSoftSerial.h>
+
+#define baud 9600
+
 AltSoftSerial  xbSerial;
-const int baud = 9600;
 
 void setup(){
   Serial.begin(baud);
