@@ -5,13 +5,11 @@
 #define timeout 1000
 #define polling 200       // the scan rate
 #define retry_count 1000  // for demo purpose; 10 is recommended
-#define re_pin 1  // <2 to disable
+#define re_pin 1          // <2 to disable
 
-enum
-{
+enum{
   PACKET1,
   PACKET2,
-  // leave this last entry
   TOTAL_NO_OF_PACKETS
 };
 
@@ -37,35 +35,23 @@ void setup(){
   packet2->register_array = regs;
 
   modbus_configure(baud, timeout, polling, retry_count, re_pin, packets, TOTAL_NO_OF_PACKETS);
-  //Serial.begin(baud);
 }
 
 
-unsigned int pre_successe;
-unsigned long pre_errors;
+unsigned int pre_succ;
+unsigned long pre_err;
 
 void loop(){
-  unsigned int connection_status = modbus_update(packets);
+  modbus_update(packets);
   unsigned int successes = packet2->successful_requests;
   unsigned long errors = packet2->total_errors;
 
-  /*
-  for(int i = 0; i < sizeof(regs); i++){
-    Serial.print(regs[i] + '\t');
-  }
-  Serial.println();
-  delay(200);
-  */
-  
-  // connection_status method doesn't represent most up to date state.
-  // we use status counters instead; more immediate than 'connection_status'
-  if (successes != pre_successe && errors == pre_errors){   // == no new error
+  if (successes != pre_succ && errors == pre_err){   // == no new error
     digitalWrite(LED_BUILTIN, regs[0]);
-    regs[1] = !regs[0];  // send toggled led state
-    //delay(500); // for demo purpose only
+    regs[1] = !regs[0];
   }else{
-    pre_errors = errors;
-    pre_successe = successes;
+    pre_err = errors;
+    pre_succ = successes;
     digitalWrite(LED_BUILTIN, LOW);
   }
 }
