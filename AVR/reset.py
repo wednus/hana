@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # This program resets the AVR in HackIoT Hana board.
 
+import os
 import time
 import RPi.GPIO as GPIO
 
@@ -12,3 +13,5 @@ GPIO.setup(pin, GPIO.OUT)
 GPIO.output(pin, GPIO.HIGH)
 time.sleep(0.12)
 GPIO.output(pin, GPIO.LOW)
+
+os.system("rpirtscts on > /dev/null")
