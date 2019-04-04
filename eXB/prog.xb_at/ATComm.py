@@ -19,9 +19,9 @@ def pair(arg):
 
 parser = argparse.ArgumentParser(description='AT Commander v'+ VERSION)
 parser.add_argument('-v', '--version', help='version info', action='version', version='%(prog)s v'+ VERSION)
-parser.add_argument('-c', '--commands', help='AP Commands (parameter:value)', type=pair, nargs='+')
 parser.add_argument('-p', '--port', help='serial device port (default:/dev/serial0)', default='/dev/serial0')
 parser.add_argument('-b', '--baud', help='baudrate (default:9600)', default='9600')
+parser.add_argument('commands', help='AP Commands (parameter:value)', type=pair, nargs='+')
 args = vars(parser.parse_args())
 
 ser = serial.Serial(args['port'], args['baud'], timeout=0)   # timeout to make readline() non-blocking
