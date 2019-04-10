@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
-sys.path.append('/workspace/libraries/python/modbus-tk')
+sys.path.append('/workspace/libraries/Wednus/modbus-tk')
 
 import modbus_tk
 import modbus_tk.defines as cst

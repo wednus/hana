@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import sys
-sys.path.append('/workspace/libraries/python/modbus-tk')
+sys.path.append('/workspace/libraries/Wednus/modbus-tk')
 
 import time
 import serial

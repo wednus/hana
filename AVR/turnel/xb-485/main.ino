@@ -1,7 +1,7 @@
 #include <AltSoftSerial.h>
 #include <SoftwareSerial.h>
 
-AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
+AltSoftSerial  xbSerial;        // RX:8, TX:9, Reserved:10
 SoftwareSerial spSerial(3, 4);  // RX:3, TX:4, RE:7
 const int rePin = 7;
 const int baud = 9600;
