@@ -11,22 +11,20 @@ This project demonstrates how to use Arduino environment for developing ESP8266 
 Edit Makefile
 
     BOARD = generic
-    FS_DIR = ./data             # default
-    FLASH_DEF = 512K32          # create SPIFFS (check list_flash_defs)
+    FLASH_DEF = 1M64
+    UPLOAD_SPEED = 57600
     UPLOAD_PORT = /dev/serial0
-    UPLOAD_SPEED = 19200
-    ESP_ROOT = /workspace/libraries/esp8266com/esp8266
-    include ./makeEspArduino.mk
+    EXCLUDE_DIRS = ./firmware
+    include /usr/share/arduino/makeEspArduino_hackiot.mk
 
 #### Run Make
 
-    make flash
-You don't need 'make flash_fs' if FS_DIR has defined in Makefile.
+    make upload
 
 ## Monitoring
-Open serial term (term.py) with baud rate 19200.
+Open serial term (term.py) with baud rate 57600.
 
-    ./term.py -b 19200
+    ./term.py -b 57600
     
 Reset the device and start monitoring any serial debug messages.
 
@@ -40,7 +38,7 @@ Reset the device and start monitoring any serial debug messages.
       - [How To Unbrick ESP8266 (Blinking Blue Led)](https://blog.vinczejanos.info/2016/11/14/unbrick-esp8266-blinking-blue-led/)
 #### Failure during flashing
 - esptool.FatalError: Failed to write compressed data to flash after seq 0 (result was C100)
-  - cause: unstable serial communication (stick to 19200; UPLOAD_SPEED = 19200)
+  - cause: unstable serial communication (stick to 57600; UPLOAD_SPEED = 57600)
   - symptoms: temporarily bricked from flashing
   - fix: try BBF below
 
