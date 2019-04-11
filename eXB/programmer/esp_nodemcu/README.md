@@ -1,21 +1,23 @@
-ESP8266: NodeMCU Flashing
+ESP8266 with NodeMCU
 =
 
 ## Prerequisites
 
-    pip install esptool
-    git clone https://github.com/espressif/ESP8266_NONOS_SDK
+    git clone https://github.com/nodemcu/nodemcu-firmware.git
 
-## Build firmware
+## Build NodeMCU
+Put *.lua files in the './nodemcu-firmware/local/fs' folder
 
     cd nodemcu-firmware
     make
 
-ref: https://medium.com/@cilliemalan/getting-started-on-nodemcu-with-your-own-firmware-cb2feffb067f
+- [SPIFFS File System](https://github.com/nodemcu/nodemcu-firmware/blob/master/docs/spiffs.md)
+- [Prepare custom build](https://medium.com/@cilliemalan/getting-started-on-nodemcu-with-your-own-firmware-cb2feffb067f)
 
+#### Flashing
+    ./upload.sh
 
 #### estool Options
-
 - before no_reset
 - after no_reset<br>
   Currently SBC's DTR connected to the AVR's reset, not ESP.
@@ -32,13 +34,11 @@ ref: https://medium.com/@cilliemalan/getting-started-on-nodemcu-with-your-own-fi
       flash_id
 
     esptool.py -p /dev/serial0 -b 57600 \
-      --before no_reset --after no_reset --no-stub \
-      write_flash --flash_freq 40m --flash_mode qio \
+      --before no_reset --after no_reset --no-stub write_flash \
       0x0000 ./nodemcu-float.bin
 
     esptool.py -p /dev/serial0 -b 57600 \
-      --before no_reset --after no_reset --no-stub \
-      write_flash --flash_freq 40m --flash_mode qio \
+      --before no_reset --after no_reset --no-stub write_flash \
       0x0000 boot_v1.7.bin \
       0x1000 user1.1024.new.2.bin \
       0x7E000 blank.bin
@@ -46,8 +46,10 @@ ref: https://medium.com/@cilliemalan/getting-started-on-nodemcu-with-your-own-fi
 
 ## LUA Basics
 
+    -- delete file --
     file.remove("init.lua")
 
+    -- create file --
     if file.open("credentials.lua", "a+") then
       -- write 'foo bar' to the end of the file
       file.writeline('SSID = "blue"')
@@ -55,6 +57,20 @@ ref: https://medium.com/@cilliemalan/getting-started-on-nodemcu-with-your-own-fi
       file.close()
     end
 
+    -- Blink using timer alarm --
+    -- use D4 (GPIO2)
+    ledPin = 4
+    -- set mode to output
+    gpio.mode(ledPin,gpio.OUTPUT)
+    ledState = 0
+    -- timer loop
+    tmr.create():alarm(1000, tmr.ALARM_AUTO, function()
+      ledState = 1 - ledState;
+      gpio.write(ledPin, ledState)
+      print("LED:"..ledState)
+    end)
+
+    -- list files --
     l = file.list();
     for k,v in pairs(l) do
         print("name:"..k..", size:"..v)

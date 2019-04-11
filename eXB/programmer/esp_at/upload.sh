@@ -11,6 +11,7 @@
 BAUD=57600
 PROG_PIN=2  # GPIO27(mode)-ESP_GPIO0: 'out' && 0 => PROG | 'in' => RUN
 RESET_PIN=25 # GPIO26(reset)-ESP_RST: ESP reset pin
+AT_FW=/workspace/libraries/Wednus/esp_at
 
 # init
 gpio mode $RESET_PIN out
@@ -23,24 +24,20 @@ gpio write $RESET_PIN 0
 # give time to settle from busy running state
 sleep 1
 gpio write $RESET_PIN 1
-#sleep 0.2
-
-# test (optional)
-./esptool.py -p /dev/serial0 -b $BAUD \
-  --before no_reset --after no_reset --no-stub \
-  flash_id
-echo
 
 # flashing firmware
 ./esptool.py -p /dev/serial0 -b $BAUD \
-  --before no_reset --after no_reset --no-stub \
-  write_flash --flash_mode qio \
-  0x00000 AT_bin/boot_v1.5.bin \
-  0x01000 AT_bin/512+512/user1.1024.new.2.bin \
-  0x7e000 AT_bin/blank.bin \
-  0xfe000 AT_bin/blank.bin
+  --before no_reset --after no_reset --no-stub write_flash \
+  0x00000 $AT_FW/AI-Tinker_v1.3/at_fw.bin
   
+#  0x00000 $AT_FW/boot_v1.5.bin \
+#  0x01000 $AT_FW/512+512/user1.1024.new.2.bin \
+#  0x7e000 $AT_FW/blank.bin \
+#  0xfe000 $AT_FW/blank.bin
+  
+echo Resetting module...
 gpio write $PROG_PIN 1 # set RUN mode
 # trigger PROG->RUN
 gpio write $RESET_PIN 0
+sleep 1
 gpio write $RESET_PIN 1
