@@ -11,17 +11,11 @@
 BAUD=57600
 PROG_PIN=2  # GPIO27(mode)-ESP_GPIO0: 'out' && 0 => PROG | 'in' => RUN
 RESET_PIN=25 # GPIO26(reset)-ESP_RST: ESP reset pin
+FW=./firmware
 
 # init
 gpio mode $RESET_PIN out
 gpio mode $PROG_PIN out
-
-#gpio write $RESET_PIN 1  # reset pull-up
-#gpio write $PROG_PIN 1  # reset pull-up
-
-# pre-reset (halt busy uC)
-#gpio write $RESET_PIN 0
-#gpio write $RESET_PIN 1
 
 # set prog mode
 gpio write $PROG_PIN 0  # set PROG mode
@@ -31,13 +25,19 @@ gpio write $RESET_PIN 0
 sleep 1
 gpio write $RESET_PIN 1
 
-# test (optional)
+# flashing firmware
 ./esptool.py -p /dev/serial0 -b $BAUD \
-  --before no_reset --after no_reset --no-stub\
-  flash_id
-echo
+  --before no_reset --after no_reset --no-stub write_flash \
+  0x00000 $FW/boot_v1.6.bin \
+  0x01000 $FW/user1.bin \
+  0xfc000 $FW/esp_init_data_default.bin \
+  0xfe000 $FW/blank.bin
 
+#  0x00000 $AT_FW/AI-Tinker_v1.3/at_fw.bin
+  
+echo Resetting module...
 gpio write $PROG_PIN 1 # set RUN mode
 # trigger PROG->RUN
 gpio write $RESET_PIN 0
+sleep 1
 gpio write $RESET_PIN 1

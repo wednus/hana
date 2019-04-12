@@ -1,7 +1,6 @@
 #include <AltSoftSerial.h>
-#define baud 115200
-
-AltSoftSerial  xbSerial;        // RX:8, TX:9, RE:10 (orig. PWM)
+#define baud 57600
+AltSoftSerial  xbSerial;        // RX:8, TX:9
 
 void setup(){
   Serial.begin(baud);
