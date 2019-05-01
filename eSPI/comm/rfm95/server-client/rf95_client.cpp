@@ -49,7 +49,7 @@
 
 // Our RFM95 Configuration 
 #define RF_FREQUENCY  868.00
-#define RF_GATEWAY_ID 1 
+#define RF_GATEWAY_ID 1
 #define RF_NODE_ID    10
 
 // Create an instance of a driver
@@ -151,7 +151,7 @@ int main (int argc, const char* argv[] )
     rf95.setHeaderFrom(RF_NODE_ID);
     
     // Where we're sending packet
-    rf95.setHeaderTo(RF_GATEWAY_ID);  
+    rf95.setHeaderTo(0000000000000001);  
 
     printf("RF95 node #%d init OK @ %3.2fMHz\n", RF_NODE_ID, RF_FREQUENCY );
 
