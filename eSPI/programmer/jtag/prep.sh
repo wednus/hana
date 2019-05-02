@@ -2,8 +2,8 @@
 # ref: https://github.com/synthetos/PiOCD/wiki/Using-a-Raspberry-Pi-as-a-JTAG-Dongle
 
 # install required packages
-apt-get update && apt-get -y install \
-  autoconf libtool libftdi-dev pkg-config libusb-1.0-0-dev
+#apt-get update && apt-get -y install \
+#  autoconf libtool libftdi-dev pkg-config libusb-1.0-0-dev
 
 OCD="/workspace/libraries/Wednus/openocd-git"
 oldpath=`pwd`
@@ -11,6 +11,7 @@ cd $OCD
 
 ./bootstrap
 ./configure --enable-sysfsgpio\
+    --enable-bcm2835gpio \
     --enable-maintainer-mode \
     --disable-werror \
     --enable-ft2232_libftdi \
@@ -37,4 +38,4 @@ cp -r tcl/ /usr/share/openocd
 cd $oldpath
 
 # test
-openocd -s /usr/share/openocd -f board/raspberrypi-due.tcl
+openocd
